@@ -1,0 +1,16 @@
+python run_seq2seq_qa.py \
+	--model_name_or_path google-t5/t5-small \
+	--dataset_name squad_v2 \
+	--context_column context \
+	--question_column question \
+	--answer_column answers \
+	--do_predict \
+	--predict_with_generate \
+	--per_device_train_batch_size 1 \
+	--per_device_eval_batch_size 1 \
+	--learning_rate 3e-5 \
+	--num_train_epochs 1 \
+	--max_seq_length 384 \
+	--max_predict_sample 300 \
+	--doc_stride 128 \
+	--output_dir QA_result
